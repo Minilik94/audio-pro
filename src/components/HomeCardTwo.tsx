@@ -1,6 +1,6 @@
 import Pattern from "../assets/cart/pattern-circles.svg";
 
-const HomeCardTwo = () => {
+const HomeCardZX9Speaker = () => {
   return (
     <div className="max-w-[69.375rem] mx-auto h-full flex items-center justify-center shadow-none relative overflow-hidden font-manrope px-2">
       <div
@@ -53,4 +53,4 @@ const HomeCardTwo = () => {
   );
 };
 
-export default HomeCardTwo;
+export default HomeCardZX9Speaker;

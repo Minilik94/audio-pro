@@ -28,7 +28,7 @@ const HomeCards = ({ textColor = "text-primary-200" }) => {
           key={index}
           className="relative flex flex-col items-center justify-center text-center p-4 group"
         >
-          <div className="w-full max-w-sm bg-third border mt-24 mx-auto border-gray-200 rounded-lg shadow relative">
+          <div className="w-full max-w-sm bg-secondary-500 border mt-24 mx-auto border-gray-200 rounded-lg shadow relative">
             <NavLink to={item.link}>
               <img
                 className="absolute inset-0 w-full h-full object-scale-down -top-24 right-0 bottom-0 left-0 transition-transform duration-300 group-hover:scale-105"

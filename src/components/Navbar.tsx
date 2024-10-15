@@ -5,7 +5,7 @@ import "@fontsource/manrope";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/500.css";
 import "@fontsource/manrope/700.css";
-import HomeCards from "./HomeCards";
+import HomeCards from "./HomeCardsNav";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -51,7 +51,7 @@ const Navbar = () => {
             <div className="flex flex-shrink-0 items-center cursor-pointer">
               <NavLink to="/" className="z-50">
                 <img
-                  className="h-8 w-auto"
+                  className="h-7 w-auto"
                   src="/src/assets/audiophile-logo.svg"
                   alt="audiophile-logo"
                 />
@@ -61,11 +61,11 @@ const Navbar = () => {
 
           {/* Navigation Links for Large Screens */}
           <div className="hidden sm:block md:hidden w-full lg:flex items-center justify-center  ">
-            <div className="lg:flex space-x-4 sm:hidden md:hidden -z-0 text-sm ">
+            <div className="lg:flex space-x-4 sm:hidden md:hidden -z-0 text-xs ">
               <NavLink
                 onClick={closeMenu}
                 to="/"
-                className="rounded-md px-3 py-2  font-medium tracking-wider text-primary-100  hover:text-primary-100"
+                className="rounded-md px-3 py-2  font-medium tracking-widest text-primary-100  hover:text-primary-100"
                 aria-current="page"
               >
                 HOME
@@ -73,21 +73,21 @@ const Navbar = () => {
               <NavLink
                 onClick={closeMenu}
                 to="/earphones"
-                className="rounded-md px-3 py-2  font-medium tracking-wider text-white hover:text-primary-100"
+                className="rounded-md px-3 py-2  font-medium tracking-widest text-white hover:text-primary-100"
               >
                 EARPHONES
               </NavLink>
               <NavLink
                 onClick={closeMenu}
                 to="/speakers"
-                className="rounded-md px-3 py-2  font-medium tracking-wider text-white hover:text-primary-100"
+                className="rounded-md px-3 py-2  font-medium tracking-widest text-white hover:text-primary-100"
               >
                 SPEAKERS
               </NavLink>
               <NavLink
                 onClick={closeMenu}
                 to="/headphones"
-                className="rounded-md px-3 py-2  font-medium tracking-wider text-white hover:text-primary-100"
+                className="rounded-md px-3 py-2  font-medium tracking-widest text-white hover:text-primary-100"
               >
                 HEADPHONES
               </NavLink>

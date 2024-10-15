@@ -2,8 +2,12 @@ import "@fontsource/manrope";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/700.css";
 import Hero from "../components/Hero";
-import HomeCards from "../components/HomeCards";
-import HomeCardTwo from "../components/HomeCardTwo";
+import HomeCards from "../components/HomeCardsNav";
+import HomeCardEarphones from "../components/HomeCardEarphones";
+import HomeCardZX7 from "../components/HomeCardZX7";
+import HomeCardZX9Speaker from "../components/HomeCardTwo";
+import HomeCardDescription from "../components/HomeCardDescription";
+import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (
@@ -13,8 +17,11 @@ const HomePage = () => {
       </div>
 
       {/* <div className="space-y-8"> */}
-        <HomeCards />
-        <HomeCardTwo/>
+      <HomeCards />
+      <HomeCardZX9Speaker />
+      <HomeCardZX7 />
+      <HomeCardEarphones />
+      <HomeCardDescription />
       {/* </div> */}
     </>
   );
