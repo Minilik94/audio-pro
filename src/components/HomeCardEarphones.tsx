@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import earphones from "../assets/home/mobile/image-earphones-yx1.jpg";
 const HomeCardEarphones = () => {
   return (
@@ -18,12 +19,12 @@ const HomeCardEarphones = () => {
               YX1 Earphones
             </h3>
             <div className="">
-              <button
+              <NavLink to={"/product/yx1-earphones"}
                 className="lg:text-start bg-transparent border border-primary-200 rounded-sm text-secondary-300 font-extrabold mx-auto transition-all duration-600 px-8 py-4
           text-xs uppercase tracking-widest  hover:bg-secondary-300 hover:text-secondary-200"
               >
                 See Product
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>

@@ -9,6 +9,8 @@ import Earphones from "./pages/Earphones";
 import Headphones from "./pages/Headphones";
 import Speakers from "./pages/Speakers";
 import HomePage from "./pages/HomePage";
+import NotFoundPage from "./pages/NotFoundPage";
+import Product from "./pages/Product";
 
 function App() {
   const router = createBrowserRouter(
@@ -18,6 +20,8 @@ function App() {
         <Route path="/earphones" element={<Earphones />} />
         <Route path="/headphones" element={<Headphones />} />
         <Route path="/speakers" element={<Speakers />} />
+        <Route path="/product/:slug" element={<Product />} />
+        <Route path="*" element={<NotFoundPage/>} />
       </Route>
     )
   );

@@ -5,9 +5,8 @@ import Hero from "../components/Hero";
 import HomeCards from "../components/HomeCardsNav";
 import HomeCardEarphones from "../components/HomeCardEarphones";
 import HomeCardZX7 from "../components/HomeCardZX7";
-import HomeCardZX9Speaker from "../components/HomeCardTwo";
+import HomeCardZX9Speaker from "../components/HomeCardZX9";
 import HomeCardDescription from "../components/HomeCardDescription";
-import Footer from "../components/Footer";
 
 const HomePage = () => {
   return (

@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Pattern from "../assets/cart/pattern-circles.svg";
 
 const HomeCardZX9Speaker = () => {
@@ -39,12 +40,12 @@ const HomeCardZX9Speaker = () => {
               truly remarkable sound.
             </p>
             <div className="w-full lg:w-fit flex items-start justify-start left-0">
-              <button
+              <NavLink to={"/product/zx9-speaker"}
                 className="lg:text-start bg-primary-200 rounded-sm text-primary-300 mx-auto hover:bg-secondary-400 transition-colors duration-300 px-8 py-4
           text-xs uppercase tracking-widest font-bold"
               >
                 See Product
-              </button>
+              </NavLink>
             </div>
           </div>
         </div>

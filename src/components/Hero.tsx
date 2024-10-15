@@ -2,6 +2,7 @@ import HeroImg from "../assets/home/desktop/headphone-hero-image.png";
 import "@fontsource/manrope";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/700.css";
+import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -36,10 +37,10 @@ const Hero = () => {
             Experience natural, lifelike audio and exceptional build quality
             made for the passionate music enthusiast.
           </p>
-          <button className="bg-primary-100 hover:bg-secondary-100 transition-colors duration-300 text-white px-8 py-4
+          <NavLink to={"/product/xx99-mark-two-headphones"} className="bg-primary-100 hover:bg-secondary-100 transition-colors duration-300 text-white px-8 py-4
           text-xs uppercase tracking-widest font-bold">
             See Product
-          </button>
+          </NavLink>
         </div>
       </div>
 

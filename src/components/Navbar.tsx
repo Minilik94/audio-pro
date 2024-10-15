@@ -72,10 +72,10 @@ const Navbar = () => {
               </NavLink>
               <NavLink
                 onClick={closeMenu}
-                to="/earphones"
+                to="/headphones"
                 className="rounded-md px-3 py-2  font-medium tracking-widest text-white hover:text-primary-100"
               >
-                EARPHONES
+                HEADPHONES
               </NavLink>
               <NavLink
                 onClick={closeMenu}
@@ -84,12 +84,13 @@ const Navbar = () => {
               >
                 SPEAKERS
               </NavLink>
+
               <NavLink
                 onClick={closeMenu}
-                to="/headphones"
+                to="/earphones"
                 className="rounded-md px-3 py-2  font-medium tracking-widest text-white hover:text-primary-100"
               >
-                HEADPHONES
+                EARPHONES
               </NavLink>
             </div>
           </div>

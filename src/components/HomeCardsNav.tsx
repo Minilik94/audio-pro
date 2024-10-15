@@ -29,27 +29,26 @@ const HomeCards = ({ textColor = "text-primary-200" }) => {
           className="relative flex flex-col items-center justify-center text-center p-4 group"
         >
           <div className="w-full max-w-sm bg-secondary-500 border mt-24 mx-auto border-gray-200 rounded-lg shadow relative">
-            <NavLink to={item.link}>
+            <div>
               <img
                 className="absolute inset-0 w-full h-full object-scale-down -top-24 right-0 bottom-0 left-0 transition-transform duration-300 group-hover:scale-105"
                 src={item.image}
                 alt={item.alt}
               />
-            </NavLink>
+            </div>
             <div className="mx-auto w-full flex flex-col space-y-2 px-16 mt-20">
-              <a href="/">
+              <div>
                 <h5 className="text-lg flex items-center justify-center uppercase font-semibold -mb-8 tracking-widest leading-loose">
                   {item.alt}
                 </h5>
-              </a>
+              </div>
               <div className="flex items-center justify-center w-full py-6">
-                <NavLink
-                  to={item.link}
+                <div
                   className={`flex items-center uppercase transition-colors font-bold font-manrope text-sm group-hover:text-primary-100`}
                 >
                   <span className="tracking-widest leading-loose">Shop</span>
                   <ChevronRight size={12} className="text-xs" />
-                </NavLink>
+                </div>
               </div>
             </div>
           </div>
