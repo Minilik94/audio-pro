@@ -112,7 +112,7 @@ const Navbar = () => {
       >
         <HomeCards textColor="text-secondary-200" />
       </div>
-      <div className="max-w-[68rem]  mx-auto px-2 border-t border-t-slate-500"></div>
+      <div className="max-w-[68rem]  mx-auto px-2 border-t border-t-secondary-400"></div>
     </nav>
   );
 };

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { Product as ProductType } from "../shared/types";
-import ImgZx9 from "src/assets/product-zx9-speaker/desktop/image-product.jpg";
 import { Minus, Plus } from "lucide-react";
 
 const Product = () => {
@@ -94,7 +93,7 @@ const Product = () => {
               <span className="mr-1">$</span>
               {product.price.toLocaleString()}
             </div>
-            <div className="flex items-center justify-start gap-6">
+            <div className="flex items-center md:justify-start lg:justify-start md:gap-4 lg:gap-6 justify-between w-full">
               <div className="flex items-center w-fit bg-primary-300">
                 <button className="p-5 hover:scale-90 transition-all duration-300 hover:text-primary-100">
                   <Minus
@@ -114,8 +113,8 @@ const Product = () => {
                   <Plus className="w-4 h-4 text-xs" />
                 </button>
               </div>
-              <button className="bg-primary-100 hover:bg-secondary-100 transition-all duration-300 px-8 py-4 uppercase text-primary-400 tracking-widest">
-                Add to cart
+              <button className="bg-primary-100 hover:bg-secondary-100 transition-colors text-[12px] duration-300 text-white px-4 py-4 uppercase">
+                ADd to cart
               </button>
             </div>
           </div>

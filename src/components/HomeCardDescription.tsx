@@ -2,10 +2,10 @@ import heroPersonImg from "../assets/man-headerphone.webp";
 
 const HomeCardDescription = () => {
   return (
-    <div className="max-w-[69.375rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2 my-8">
+    <div className="max-w-[69.375rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2 my-16">
       <div className="grid grid-cols-1 md:grid-cols-2 rounded-lg gap-8 shadow-lg w-full">
         <div
-          className="min-h-80 h-full w-full rounded-lg md:order-2 lg:order-2"
+          className="min-h-[32rem] h-full w-full rounded-lg md:order-2 lg:order-2"
           style={{
             backgroundImage: `url(${heroPersonImg})`,
             backgroundRepeat: "no-repeat",
@@ -19,7 +19,7 @@ const HomeCardDescription = () => {
               Bringing you the <span className="text-primary-100">best</span>{" "}
               audio gear
             </h3>
-            <p className="text-secondary-700">
+            <p className="text-secondary-700 tracking-wider leading-relaxed">
               Located at the heart of New York City, Audiophile is the premier
               store for high end headphones, earphones, speakers, and audio
               accessories. We have a large showroom and luxury demonstration
