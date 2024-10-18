@@ -1,7 +1,14 @@
 import { Facebook, Instagram, X } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
+
+  const getLinkClass = (to: string) =>
+    `rounded-md px-3 py-2 font-medium tracking-widest 
+     ${location.pathname === to ? "text-primary-100" : "text-white"}
+     hover:text-primary-100`;
+
   return (
     <div className="bg-secondary-300 font-manrope mt-4">
       <div className="mx-auto  max-w-[72rem] grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -21,17 +28,14 @@ const Footer = () => {
             <ul className="flex-1 tracking-widest items-center md:tracking-wider flex flex-col md:items-center  md:flex-row md:gap-10 gap-4 lg:items-center lg:leading-[8]">
               <li>
                 {" "}
-                <NavLink
-                  className="hover:text-primary-100 text-primary-100 cursor-pointer transition-colors duration-300"
-                  to={"/"}
-                >
+                <NavLink className={getLinkClass("/")} to={"/"}>
                   Home
                 </NavLink>{" "}
               </li>
               <li>
                 {" "}
                 <NavLink
-                  className="hover:text-primary-100 cursor-pointer transition-colors duration-300"
+                  className={getLinkClass("/earphones")}
                   to={"/earphones"}
                 >
                   Earphones
@@ -39,17 +43,14 @@ const Footer = () => {
               </li>
               <li>
                 {" "}
-                <NavLink
-                  className="hover:text-primary-100 cursor-pointer transition-colors duration-300"
-                  to={"/speakers"}
-                >
+                <NavLink className={getLinkClass("/speakers")} to={"/speakers"}>
                   speakers
                 </NavLink>{" "}
               </li>
               <li>
                 {" "}
                 <NavLink
-                  className="hover:text-primary-100 cursor-pointer transition-colors duration-300"
+                  className={getLinkClass("/headphones")}
                   to={"/headphones"}
                 >
                   headphones

@@ -13,7 +13,7 @@ import {
 const HomePage = () => {
   return (
     <>
-      <div className="px-0 bg-secondary-300 lg:px-24 lg:py-4">
+      <div className="px-0  bg-secondary-300 lg:px-24 lg:py-4">
         <Hero />
       </div>
 

@@ -6,6 +6,8 @@ import { ProductListings, ProductHero } from "../components/product_listing";
 
 const Headphones = () => {
   const [product, setProduct] = useState<ProductType | null>(null);
+  const [loading, setLoading] = useState(true)
+
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -21,17 +23,17 @@ const Headphones = () => {
         setProduct(sortedProducts);
       } catch (err) {
         console.log(err);
+      }finally{
+        setLoading(false)
       }
     };
     fetchProduct();
   }, []);
-  if (!product) {
-    return <div>Loading...</div>;
-  }
+
   return (
     <div className=" w-full mx-auto h-full shadow-none relative overflow-hidden font-manrope space-y-20">
       <ProductHero title={"Headphones"} />
-      <ProductListings product={product} />
+      <ProductListings product={product} loading={loading}/>
       <HomeCardsNav />
       <HomeCardDescription />
     </div>

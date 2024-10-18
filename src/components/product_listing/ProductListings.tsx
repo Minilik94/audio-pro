@@ -1,10 +1,16 @@
 import { NavLink } from "react-router-dom";
 import { Product as ProductType } from "../../shared/types";
 import { useEffect, useState } from "react";
+import Spinner from "../Spinner";
 
-const ProductListings = (product: { product: ProductType | null }) => {
+const ProductListings = ({
+  product,
+  loading,
+}: {
+  product: ProductType | null;
+  loading: boolean;
+}) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -13,10 +19,15 @@ const ProductListings = (product: { product: ProductType | null }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  if (!product) {
+    return <Spinner loading={loading} />;
+  }
+
   return (
     <div className="max-w-[72rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2 w-full">
-      {product?.product && product.product.length > 0 ? (
-        product?.product.map((product: ProductType, index: number) => (
+      {product &&
+        product.length > 0 &&
+        product.map((product: ProductType, index: number) => (
           <div className="lg:my-20 mb-8" key={product.slug}>
             <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full px-8 gap-24">
               <div
@@ -45,7 +56,7 @@ const ProductListings = (product: { product: ProductType | null }) => {
                   }),
                 }}
               ></div>
-              <div className="flex flex-col justify-center gap-9  py-2">
+              <div className="flex flex-col justify-center gap-9 py-2">
                 <p
                   className={`${
                     product.new
@@ -74,10 +85,7 @@ const ProductListings = (product: { product: ProductType | null }) => {
               </div>
             </div>
           </div>
-        ))
-      ) : (
-        <div>No products found.</div>
-      )}{" "}
+        ))}{" "}
     </div>
   );
 };

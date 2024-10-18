@@ -11,9 +11,15 @@ importers:
       '@fontsource/manrope':
         specifier: ^5.1.0
         version: 5.1.0
+      '@studio-freight/lenis':
+        specifier: ^1.0.42
+        version: 1.0.42
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.47)
+      framer-motion:
+        specifier: ^11.11.9
+        version: 11.11.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       json-server:
         specifier: ^1.0.0-beta.3
         version: 1.0.0-beta.3
@@ -32,6 +38,9 @@ importers:
       react-router-dom:
         specifier: ^6.26.2
         version: 6.27.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      react-spinners:
+        specifier: ^0.14.1
+        version: 0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       vite:
         specifier: ^5.4.9
         version: 5.4.9
@@ -391,6 +400,10 @@ packages:
     resolution: {integrity: sha512-fbMkAF7fufku0N2dE5TBXcNlg0pt0cJue4xBRE2Qc5Vqikxr4VCgKj/ht6SMdFcOacVA9rqF70APJ8RN/4vMJw==}
     cpu: [x64]
     os: [win32]
+
+  '@studio-freight/lenis@1.0.42':
+    resolution: {integrity: sha512-HJAGf2DeM+BTvKzHv752z6Z7zy6bA643nZM7W88Ft9tnw2GsJSp6iJ+3cekjyMIWH+cloL2U9X82dKXgdU8kPg==}
+    deprecated: '''@studio-freight/lenis'' has been renamed to just ''lenis'', run ''npx @darkroom.engineering/codemods'' to update your dependecies accordingly.'
 
   '@swc/core-darwin-arm64@1.7.35':
     resolution: {integrity: sha512-BQSSozVxjxS+SVQz6e3GC/+OBWGIK3jfe52pWdANmycdjF3ch7lrCKTHTU7eHwyoJ96mofszPf5AsiVJF34Fwg==}
@@ -900,6 +913,20 @@ packages:
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
 
+  framer-motion@11.11.9:
+    resolution: {integrity: sha512-XpdZseuCrZehdHGuW22zZt3SF5g6AHJHJi7JwQIigOznW4Jg1n0oGPMJQheMaKLC+0rp5gxUKMRYI6ytd3q4RQ==}
+    peerDependencies:
+      '@emotion/is-prop-valid': '*'
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      '@emotion/is-prop-valid':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -1255,6 +1282,12 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
+  react-spinners@0.14.1:
+    resolution: {integrity: sha512-2Izq+qgQ08HTofCVEdcAQCXFEYfqTDdfeDQJeo/HHQiQJD4imOicNLhkfN2eh1NYEWVOX4D9ok2lhuDB0z3Aag==}
+    peerDependencies:
+      react: ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
+
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
@@ -1394,6 +1427,9 @@ packages:
 
   ts-interface-checker@0.1.13:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
+
+  tslib@2.8.0:
+    resolution: {integrity: sha512-jWVzBLplnCmoaTr13V9dYbiQ99wvZRd0vNWaDRg+aVYRcjDF3nDksxFDE/+fkXnKhpnUUkmx5pK/v8mCtLVqZA==}
 
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -1703,6 +1739,8 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.24.0':
     optional: true
+
+  '@studio-freight/lenis@1.0.42': {}
 
   '@swc/core-darwin-arm64@1.7.35':
     optional: true
@@ -2238,6 +2276,13 @@ snapshots:
 
   fraction.js@4.3.7: {}
 
+  framer-motion@11.11.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      tslib: 2.8.0
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   fsevents@2.3.3:
     optional: true
 
@@ -2532,6 +2577,11 @@ snapshots:
       '@remix-run/router': 1.20.0
       react: 18.3.1
 
+  react-spinners@0.14.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+
   react@18.3.1:
     dependencies:
       loose-envify: 1.4.0
@@ -2698,6 +2748,8 @@ snapshots:
       typescript: 5.6.3
 
   ts-interface-checker@0.1.13: {}
+
+  tslib@2.8.0: {}
 
   type-check@0.4.0:
     dependencies:

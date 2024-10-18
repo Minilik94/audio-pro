@@ -8,13 +8,16 @@ import {
   OtherProducts,
 } from "../components/product_details";
 import { HomeCardsNav } from "../components/home_page";
+import Spinner from "../components/Spinner";
 
 const Product = () => {
   const { slug } = useParams();
   const [product, setProduct] = useState<ProductType | null>(null); // Start with null
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [loading, setLoading] = useState(true)
   const [cartTotal, setCartTotoal] = useState(1);
 
+  console.log(product, 'products')
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
 
@@ -32,15 +35,16 @@ const Product = () => {
       } catch (err) {
         console.log(err);
       }
+      finally{
+        setLoading(false)
+      }
     };
     fetchProduct();
   }, [slug]); // Add slug as a dependency
 
-  // Handle case where product is still being fetched
-  if (!product) {
-    return <div>Loading...</div>;
+  if(!product){
+    return <Spinner loading={loading}/>
   }
-
 
   return (
     <div className="max-w-[72rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2 w-full my-9 ">
@@ -58,30 +62,30 @@ const Product = () => {
             className="min-h-[38rem] h-full w-full rounded-lg p-12"
             style={{
               ...(windowWidth >= 1024 && {
-                backgroundImage: `url(/${product.image.desktop})`,
+                backgroundImage: `url(/${product?.image.desktop})`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center ",
                 backgroundSize: "cover",
               }),
               ...(windowWidth < 1024 && {
-                backgroundImage: `url(/${product.image.tablet})`,
+                backgroundImage: `url(/${product?.image.tablet})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }),
               // small screen
               ...(windowWidth < 640 && {
-                backgroundImage: `url(/${product.image.mobile})`,
+                backgroundImage: `url(/${product?.image.mobile})`,
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }),
             }}
           ></div>
-          <div className="flex flex-col justify-center lg:px-24 space-y-6  w-full">
+          <div className="flex flex-col justify-center lg:pl-24 space-y-6  w-full">
             <p
               className={`${
-                product.new
+                product?.new
                   ? "text-primary-100 uppercase text-pretty text-xl font-extralight tracking-[4.5px]"
                   : "hidden"
               }`}
@@ -89,15 +93,15 @@ const Product = () => {
               New Product
             </p>
             <div className="text-4xl uppercase tracking-widest font-bold">
-              {product.name}
+              {product?.name}
             </div>
             <div className="text-secondary-700 tracking-wide">
-              {product.description}
+              {product?.description}
             </div>
 
             <div className="font-bold tracking-widest text-lg">
               <span className="mr-1">$</span>
-              {product.price.toLocaleString()}
+              {product?.price.toLocaleString()}
             </div>
             <div className="flex items-center md:justify-start lg:justify-start md:gap-4 lg:gap-6 justify-between w-full">
               <div className="flex items-center w-fit bg-primary-300">

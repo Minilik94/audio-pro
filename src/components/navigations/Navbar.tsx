@@ -1,14 +1,21 @@
 import { ChevronRight, CircleX, Menu, ShoppingCart } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import "@fontsource/manrope";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/500.css";
 import "@fontsource/manrope/700.css";
-import HomeCardsNav from "../home_page/HomeCardsNav";
+import { HomeCardsNav } from "./../home_page";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
+  const location = useLocation();
+
+
+  const getLinkClass = (to: string) =>
+    `rounded-md px-3 py-2 font-medium tracking-widest 
+     ${location.pathname === to ? "text-primary-100" : "text-white"}
+     hover:text-primary-100`;
 
   const toggleMenu = () => {
     setOpen(!isOpen);
@@ -19,7 +26,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-secondary-300 font-manrope sticky top-0 z-20 ">
+    <nav className="bg-secondary-300 font-manrope sticky top-0 z-20">
       <div className="mx-auto max-w-[72rem] px-2 sm:px-6 space-y-4 lg:py-4 z-50">
         {/* Navbar Container */}
         <div className="relative flex h-16 items-center justify-between border-b-0">
@@ -33,15 +40,9 @@ const Navbar = () => {
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
-                <Menu
-                  className="hover:text-primary-100 hover:bg-transparent hover:border-none"
-                  aria-hidden="true"
-                />
+                <Menu className="hover:text-primary-100 hover:bg-transparent hover:border-none" />
               ) : (
-                <CircleX
-                  className="hover:text-primary-100 hover:bg-transparent hover:border-none"
-                  aria-hidden="true"
-                />
+                <CircleX className="hover:text-primary-100 hover:bg-transparent hover:border-none" />
               )}
             </button>
           </div>
@@ -60,12 +61,12 @@ const Navbar = () => {
           </div>
 
           {/* Navigation Links for Large Screens */}
-          <div className="hidden sm:block md:hidden w-full lg:flex items-center justify-center  ">
-            <div className="lg:flex space-x-4 sm:hidden md:hidden -z-0 text-sm ">
+          <div className="hidden sm:block md:hidden w-full lg:flex items-center justify-center">
+            <div className="lg:flex space-x-4 sm:hidden md:hidden -z-0 text-sm">
               <NavLink
                 onClick={closeMenu}
                 to="/"
-                className="rounded-md px-3 py-2  font-medium tracking-widest text-primary-100  hover:text-primary-100"
+                className={getLinkClass("/")}
                 aria-current="page"
               >
                 HOME
@@ -73,14 +74,14 @@ const Navbar = () => {
               <NavLink
                 onClick={closeMenu}
                 to="/headphones"
-                className="rounded-md px-3 py-2  font-medium tracking-widest text-white hover:text-primary-100"
+                className={getLinkClass("/headphones")}
               >
                 HEADPHONES
               </NavLink>
               <NavLink
                 onClick={closeMenu}
                 to="/speakers"
-                className="rounded-md px-3 py-2  font-medium tracking-widest text-white hover:text-primary-100"
+                className={getLinkClass("/speakers")}
               >
                 SPEAKERS
               </NavLink>
@@ -88,7 +89,7 @@ const Navbar = () => {
               <NavLink
                 onClick={closeMenu}
                 to="/earphones"
-                className="rounded-md px-3 py-2  font-medium tracking-widest text-white hover:text-primary-100"
+                className={getLinkClass("/earphones")}
               >
                 EARPHONES
               </NavLink>
@@ -112,7 +113,7 @@ const Navbar = () => {
       >
         <HomeCardsNav textColor="text-secondary-200" />
       </div>
-      <div className="max-w-[68rem]  mx-auto px-2 border-t border-t-secondary-400"></div>
+      <div className="max-w-[68rem] mx-auto px-2 border-t border-t-secondary-400"></div>
     </nav>
   );
 };
