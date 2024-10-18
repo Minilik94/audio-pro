@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
-import earphones from "../assets/home/mobile/image-earphones-yx1.jpg";
+import earphones from "../../assets/home/mobile/image-earphones-yx1.jpg";
 const HomeCardEarphones = () => {
   return (
-    <div className="max-w-[69.375rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2">
+    <div className="max-w-[72rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2">
       <div className="grid grid-cols-1 md:grid-cols-2 rounded-lg gap-8 shadow-lg w-full">
         <div
           className="min-h-80 h-full w-full rounded-lg"

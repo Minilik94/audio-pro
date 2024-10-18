@@ -1,6 +1,6 @@
-import zx7 from "../assets/home/desktop/image-speaker-zx7.jpg";
-import zx7_tablet from "../assets/home/tablet/image-speaker-zx7.jpg";
-import zx7_mobile from "../assets/home/mobile/image-speaker-zx7.jpg";
+import zx7 from "../../assets/home/desktop/image-speaker-zx7.jpg";
+import zx7_tablet from "../../assets/home/tablet/image-speaker-zx7.jpg";
+import zx7_mobile from "../../assets/home/mobile/image-speaker-zx7.jpg";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 const HomeCardZX7 = () => {
@@ -14,7 +14,7 @@ const HomeCardZX7 = () => {
   }, []);
 
   return (
-    <div className="max-w-[69.375rem] mx-auto h-full flex items-center justify-center shadow-none relative overflow-hidden font-manrope px-2 w-full my-9">
+    <div className="max-w-[72rem] mx-auto h-full flex items-center justify-center shadow-none relative overflow-hidden font-manrope px-2 w-full my-9">
       <div
         className={`bg-transparent transition-all duration-300 w-full h-full flex items-center min-h-80 rounded-lg  bg-URL(${zx7})`}
         style={{

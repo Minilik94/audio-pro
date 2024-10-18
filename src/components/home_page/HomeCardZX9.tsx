@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import Pattern from "../assets/cart/pattern-circles.svg";
+import Pattern from "../../assets/cart/pattern-circles.svg";
 
 const HomeCardZX9Speaker = () => {
   return (
-    <div className="max-w-[69.375rem] mx-auto h-full flex items-center justify-center shadow-none relative overflow-hidden font-manrope px-2">
+    <div className="max-w-[72rem] mx-auto h-full flex items-center justify-center shadow-none relative overflow-hidden font-manrope px-2">
       <div
         className="grid grid-cols-1 lg:grid-cols-2 rounded-lg shadow-secondary-100 shadow-lg bg-primary-100 w-full"
         style={{

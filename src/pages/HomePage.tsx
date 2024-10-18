@@ -1,12 +1,14 @@
 import "@fontsource/manrope";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/700.css";
-import Hero from "../components/Hero";
-import HomeCards from "../components/HomeCardsNav";
-import HomeCardEarphones from "../components/HomeCardEarphones";
-import HomeCardZX7 from "../components/HomeCardZX7";
-import HomeCardZX9Speaker from "../components/HomeCardZX9";
-import HomeCardDescription from "../components/HomeCardDescription";
+import {
+  Hero,
+  HomeCardsNav,
+  HomeCardZX9Speaker,
+  HomeCardZX7,
+  HomeCardEarphones,
+  HomeCardDescription,
+} from "../components/home_page";
 
 const HomePage = () => {
   return (
@@ -16,7 +18,7 @@ const HomePage = () => {
       </div>
 
       {/* <div className="space-y-8"> */}
-      <HomeCards />
+      <HomeCardsNav />
       <HomeCardZX9Speaker />
       <HomeCardZX7 />
       <HomeCardEarphones />

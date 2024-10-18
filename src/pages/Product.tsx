@@ -2,6 +2,12 @@ import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { Product as ProductType } from "../shared/types";
 import { Minus, Plus } from "lucide-react";
+import {
+  ProductGallary,
+  ProductFeatures,
+  OtherProducts,
+} from "../components/product_details";
+import { HomeCardsNav } from "../components/home_page";
 
 const Product = () => {
   const { slug } = useParams();
@@ -17,7 +23,6 @@ const Product = () => {
   }, []);
 
   useEffect(() => {
-    console.log(slug, "slug");
     const fetchProduct = async () => {
       try {
         const res = await fetch(`/api/products/?slug=${slug}`);
@@ -36,20 +41,21 @@ const Product = () => {
     return <div>Loading...</div>;
   }
 
-  console.log(cartTotal);
 
   return (
-    <div className="max-w-[69.375rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2 w-full my-9">
-      <div className="space-y-8">
+    <div className="max-w-[72rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2 w-full my-9 ">
+      <div className="md:space-y-16 lg:space-y-16 space-y-4">
         <NavLink
           to={"/"}
-          className={"hover:text-primary-100 cursor-pointer px-16"}
+          className={
+            "hover:text-primary-100 font-bold cursor-pointer px-10 md:px-16 lg:px-8 "
+          }
         >
           Go back
         </NavLink>
-        <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full px-16 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 h-full w-full px-8 gap-8 ">
           <div
-            className="min-h-[32rem] h-full w-full rounded-lg p-12"
+            className="min-h-[38rem] h-full w-full rounded-lg p-12"
             style={{
               ...(windowWidth >= 1024 && {
                 backgroundImage: `url(/${product.image.desktop})`,
@@ -60,23 +66,23 @@ const Product = () => {
               ...(windowWidth < 1024 && {
                 backgroundImage: `url(/${product.image.tablet})`,
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "contain",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
               }),
               // small screen
               ...(windowWidth < 640 && {
                 backgroundImage: `url(/${product.image.mobile})`,
                 backgroundRepeat: "no-repeat",
-                backgroundSize: "contain",
+                backgroundSize: "cover",
                 backgroundPosition: "center",
               }),
             }}
           ></div>
-          <div className="flex flex-col justify-center space-y-6">
+          <div className="flex flex-col justify-center lg:px-24 space-y-6  w-full">
             <p
               className={`${
                 product.new
-                  ? "text-primary-100 uppercase text-pretty font-extralight tracking-[3.5px]"
+                  ? "text-primary-100 uppercase text-pretty text-xl font-extralight tracking-[4.5px]"
                   : "hidden"
               }`}
             >
@@ -114,10 +120,19 @@ const Product = () => {
                 </button>
               </div>
               <button className="bg-primary-100 hover:bg-secondary-100 transition-colors text-[12px] duration-300 text-white px-4 py-4 uppercase">
-                ADd to cart
+                Add to cart
               </button>
             </div>
           </div>
+        </div>
+        <div className="space-y-32">
+          <ProductFeatures
+            productFeatures={product.features}
+            productIncludes={product.includes}
+          />
+          <ProductGallary gallery={product.gallery} />
+          <OtherProducts others={product.others} />
+          <HomeCardsNav />
         </div>
       </div>
     </div>

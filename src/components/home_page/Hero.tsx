@@ -1,4 +1,4 @@
-import HeroImg from "../assets/home/desktop/headphone-hero-image.png";
+import HeroImg from "./../../assets/home/desktop/headphone-hero-image.png";
 import "@fontsource/manrope";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/700.css";
@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <div className="relative bg-secondary-300 flex flex-col lg:flex-row lg:-mt-10 items-center justify-between w-full px-4 font-manrope max-w-[69.375rem]">
+    <div className="relative bg-secondary-300 flex flex-col lg:flex-row lg:-mt-10 items-center justify-between w-full px-4 font-manrope max-w-[72rem]">
       {/* Background image for small screens */}
       <div className="absolute inset-0 lg:hidden flex items-center justify-center">
         <div className=" transition-all bg-transparent block">

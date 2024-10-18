@@ -5,7 +5,7 @@ import "@fontsource/manrope";
 import "@fontsource/manrope/400.css";
 import "@fontsource/manrope/500.css";
 import "@fontsource/manrope/700.css";
-import HomeCards from "./HomeCardsNav";
+import HomeCardsNav from "../home_page/HomeCardsNav";
 
 const Navbar = () => {
   const [isOpen, setOpen] = useState(false);
@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-secondary-300 font-manrope sticky top-0 z-20 ">
-      <div className="mx-auto max-w-[69.375rem] px-2 sm:px-6 space-y-4 lg:py-4 z-50">
+      <div className="mx-auto max-w-[72rem] px-2 sm:px-6 space-y-4 lg:py-4 z-50">
         {/* Navbar Container */}
         <div className="relative flex h-16 items-center justify-between border-b-0">
           {/* Mobile Menu Button */}
@@ -47,9 +47,9 @@ const Navbar = () => {
           </div>
 
           {/* Logo */}
-          <div className="flex flex-1 md:ml-12 sm:ml-12 items-center justify-center sm:items-stretch sm:justify-start">
+          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center cursor-pointer">
-              <NavLink to="/" className="z-50">
+              <NavLink to="/" className="z-50 ml-12 lg:ml-0">
                 <img
                   className="h-7 w-auto"
                   src="/src/assets/audiophile-logo.svg"
@@ -61,7 +61,7 @@ const Navbar = () => {
 
           {/* Navigation Links for Large Screens */}
           <div className="hidden sm:block md:hidden w-full lg:flex items-center justify-center  ">
-            <div className="lg:flex space-x-4 sm:hidden md:hidden -z-0 text-xs ">
+            <div className="lg:flex space-x-4 sm:hidden md:hidden -z-0 text-sm ">
               <NavLink
                 onClick={closeMenu}
                 to="/"
@@ -110,7 +110,7 @@ const Navbar = () => {
         id="mobile-menu"
         onClick={closeMenu}
       >
-        <HomeCards textColor="text-secondary-200" />
+        <HomeCardsNav textColor="text-secondary-200" />
       </div>
       <div className="max-w-[68rem]  mx-auto px-2 border-t border-t-secondary-400"></div>
     </nav>

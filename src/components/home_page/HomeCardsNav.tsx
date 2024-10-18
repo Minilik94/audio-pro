@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-const HomeCards = ({ textColor = "text-primary-200" }) => {
+const HomeCardsNav = ({ textColor = "text-primary-200" }) => {
   const items = [
     {
       image: "/src/assets/headphones.webp",
@@ -21,7 +21,7 @@ const HomeCards = ({ textColor = "text-primary-200" }) => {
   ];
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mx-auto py-4 max-w-[69.375rem] overflow-hidden font-manrope">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 mx-auto py-4 max-w-[72rem] overflow-hidden font-manrope">
       {items.map((item, index) => (
         <NavLink
           to={item.link}
@@ -58,4 +58,4 @@ const HomeCards = ({ textColor = "text-primary-200" }) => {
   );
 };
 
-export default HomeCards;
+export default HomeCardsNav;

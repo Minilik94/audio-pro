@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import HeroComponent from "../components/ProductHeroComponent";
-import HomeCardDescription from "../components/HomeCardDescription";
-import HomeCardsNav from "../components/HomeCardsNav";
 import { Product as ProductType } from "../shared/types";
 import { NavLink } from "react-router-dom";
-import ProductListings from "../components/ProductListings";
+import { HomeCardsNav, HomeCardDescription } from "../components/home_page/";
+import { ProductListings, ProductHero } from "../components/product_listing";
 
 const Headphones = () => {
   const [product, setProduct] = useState<ProductType | null>(null);
@@ -14,7 +12,6 @@ const Headphones = () => {
       try {
         const res = await fetch(`/api/products/?category=headphones`);
         const data = await res.json();
-        console.log(data, "res headphones");
         const sortedProducts = data.sort((a: ProductType, b: ProductType) => {
           if (a.new && !b.new) return -1;
           if (!a.new && b.new) return 1;
@@ -33,7 +30,7 @@ const Headphones = () => {
   }
   return (
     <div className=" w-full mx-auto h-full shadow-none relative overflow-hidden font-manrope space-y-20">
-      <HeroComponent title={"Headphones"} />
+      <ProductHero title={"Headphones"} />
       <ProductListings product={product} />
       <HomeCardsNav />
       <HomeCardDescription />

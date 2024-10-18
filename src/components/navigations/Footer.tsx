@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-secondary-300 font-manrope mt-4">
-      <div className="mx-auto  max-w-[69.375rem] grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="mx-auto  max-w-[72rem] grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="flex items-center  justify-center px-16 py-10 md:justify-start">
           <div className="flex flex-shrink-0 items-center cursor-pointer">
             <NavLink to="/">
@@ -59,7 +59,7 @@ const Footer = () => {
           </nav>
         </div>
       </div>
-      <div className="grid grid-cols-1 max-w-[69.375rem] mx-auto lg:grid-cols-2 md:justify-start items-center justify-center w-full pb-8 space-y-8 px-6 md:px-8 ">
+      <div className="grid grid-cols-1 max-w-[72rem] mx-auto lg:grid-cols-2 md:justify-start items-center justify-center w-full pb-8 space-y-8 px-6 md:px-8 ">
         <p className="text-secondary-700 text-center  px-16 py-10 md:px-8 md:text-start">
           Audiophile is an all in one stop to fulfill your audio needs. We're a
           small team of music lovers and sound specialists who are devoted to

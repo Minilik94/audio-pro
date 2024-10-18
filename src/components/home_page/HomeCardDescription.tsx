@@ -1,8 +1,8 @@
-import heroPersonImg from "../assets/man-headerphone.webp";
+import heroPersonImg from "../../assets/man-headerphone.webp";
 
 const HomeCardDescription = () => {
   return (
-    <div className="max-w-[69.375rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2 my-16">
+    <div className="max-w-[72rem] mx-auto h-full shadow-none relative overflow-hidden font-manrope px-2 my-16">
       <div className="grid grid-cols-1 md:grid-cols-2 rounded-lg gap-8 shadow-lg w-full">
         <div
           className="min-h-[32rem] h-full w-full rounded-lg md:order-2 lg:order-2"
